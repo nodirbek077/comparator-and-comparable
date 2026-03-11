@@ -75,9 +75,9 @@ public class Main {
             public int compare(Student o1, Student o2) {
                 int result = 0;
                 if (o1.getAge() > o2.getAge()) {
-                    result = 1;
-                } else if (o1.getAge() < o2.getAge()) {
                     result = -1;
+                } else if (o1.getAge() < o2.getAge()) {
+                    result = 1;
                 }
 
                 System.out.println("o1 = " + o1 + ", o2 = " + o2 + ", result = " + result);
