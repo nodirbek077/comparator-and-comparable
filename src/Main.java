@@ -64,28 +64,29 @@ public class Main {
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));*/
 
-        Student s1 = new Student(18, "Nodirbek");
-        Student s2 = new Student(17, "Lazizbek");
-        Student s3 = new Student(19, "Toshmat");
+        Student s1 = new Student(18, "Alish");
+        Student s2 = new Student(17, "Valish");
+        Student s3 = new Student(19, "Alish");
         Student s4 = new Student(17, "Eshmat");
-        Student[] students = {s1, s2, s3, s4};
+        Student[] studentArray = {s1, s2, s3, s4};
 
         Comparator<Student> comparator = new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
-                int result = 0;
+                /*int result = 0;
                 if (o1.getAge() > o2.getAge()) {
-                    result = -1;
-                } else if (o1.getAge() < o2.getAge()) {
                     result = 1;
+                } else if (o1.getAge() < o2.getAge()) {
+                    result = -1;
                 }
+                return result * -1;*/
 
-                System.out.println("o1 = " + o1 + ", o2 = " + o2 + ", result = " + result);
-                return result;
+                return o1.getName().compareTo(o2.getName());
             }
         };
+        Arrays.sort(studentArray, comparator);
+        System.out.println(Arrays.toString(studentArray));
 
-        Arrays.sort(students, comparator);
-        System.out.println(Arrays.toString(students));
+//        System.out.println("Alish".compareTo("Alibek"));
     }
 }
