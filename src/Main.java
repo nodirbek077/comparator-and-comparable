@@ -81,7 +81,7 @@ public class Main {
                 }
                 return result * -1;*/
 
-                return o1.getName().compareTo(o2.getName());
+                return o1.getName().compareTo(o2.getName()) * -1;
             }
         };
         Arrays.sort(studentArray, comparator);
