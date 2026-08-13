@@ -64,24 +64,34 @@ public class Main {
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));*/
 
-        Student s1 = new Student(18, "Alish");
-        Student s2 = new Student(17, "Valish");
-        Student s3 = new Student(19, "Alish");
-        Student s4 = new Student(17, "Eshmat");
+        Student s1 = new Student(18, "Alish", "Temur");
+        Student s2 = new Student(17, "Valish","Salima");
+        Student s3 = new Student(19, "Alish", "Temur");
+        Student s4 = new Student(17, "Eshmat","Alim");
         Student[] studentArray = {s1, s2, s3, s4};
 
         Comparator<Student> comparator = new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
-                /*int result = 0;
-                if (o1.getAge() > o2.getAge()) {
-                    result = 1;
-                } else if (o1.getAge() < o2.getAge()) {
-                    result = -1;
-                }
-                return result * -1;*/
+                int result = 0;
 
-                return o1.getName().compareTo(o2.getName()) * -1;
+                //1. Name larni o'sish tartibida
+                result = o1.getName().compareTo(o2.getName());
+
+                if (result == 0) {
+                    //2. agar name lari teng bo'lsa u holda - surname bo'yicha kamayish tartibida (teskari alifbo)
+                    result = o2.getSurname().compareTo(o1.getSurname());
+
+                    if (result == 0) {
+                        //3. agar surname lar ham teng bo'lsa age bo'yicha o'sish tartibida
+                        result = o1.getAge() - o2.getAge();
+                    }
+                }
+
+//                return result * -1;
+
+//                return o1.getName().compareTo(o2.getName()) * -1;
+                return result;
             }
         };
         Arrays.sort(studentArray, comparator);
