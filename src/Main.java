@@ -65,9 +65,9 @@ public class Main {
         System.out.println(Arrays.toString(arr));*/
 
         Student s1 = new Student(18, "Alish", "Temur");
-        Student s2 = new Student(17, "Valish","Salima");
+        Student s2 = new Student(17, "Valish", "Salima");
         Student s3 = new Student(19, "Alish", "Temur");
-        Student s4 = new Student(12, "Eshmat","Alim");
+        Student s4 = new Student(12, "Eshmat", "Alim");
         Student[] studentArray = {s1, s2, s3, s4};
 
         /*Comparator<Student> comparator = new Comparator<Student>() {
@@ -94,9 +94,32 @@ public class Main {
                 return result;
             }
         };*/
-        Arrays.sort(studentArray);
-        System.out.println(Arrays.toString(studentArray));
+//        Arrays.sort(studentArray);
+//        System.out.println(Arrays.toString(studentArray));
 
 //        System.out.println("Alish".compareTo("Alibek"));
+
+        /*Integer[] numbers = {4, 2, 9, 8, 0, 4};
+        Comparator<Integer> reverseComparator = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2.compareTo(o1);
+            }
+        };
+
+        Arrays.sort(numbers, reverseComparator);
+        System.out.println(Arrays.toString(numbers));*/
+
+        //String tipli arrayni Comparator orqali teskari alifbo tartibida joylashtiring.
+        String[] texts = {"Nodirbek", "Lazizbek", "Xasan", "Olim", "Alibek"};
+        Comparator<String> textOrder = new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o2.compareTo(o1);
+            }
+        };
+
+        Arrays.sort(texts, textOrder);
+        System.out.println(Arrays.toString(texts));
     }
 }

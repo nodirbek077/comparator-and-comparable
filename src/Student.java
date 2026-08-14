@@ -1,5 +1,5 @@
 public class Student implements Comparable<Student> {
-    private int age;
+    private Integer age;
     private String name;
     private String surname;
 
@@ -51,20 +51,22 @@ public class Student implements Comparable<Student> {
     public int compareTo(Student o) {
         //Student o1 -> this
         //Student o2 -> o
-        int result = this.getName().compareTo(o.getName());
+        /*int result = this.name.compareTo(o.name);
 
         if (result == 0){
-            result = o.getSurname().compareTo(this.getSurname());
+            result = o.surname.compareTo(this.surname);
 
             if (result == 0){
-                if (this.getAge() > o.getAge()){
+                if (this.age > o.age){
                     result = 1;
-                } else if (this.getAge() < o.getAge()) {
+                } else if (this.age < o.age) {
                     result = -1;
                 }
             }
         }
-        return result;
+        return result;*/
+
+        return this.age.compareTo(o.age);
 
 
         /*if (this.getAge() > o.getAge()) {
