@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements Comparable<Student> {
     private int age;
     private String name;
     private String surname;
@@ -45,5 +45,33 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        //Student o1 -> this
+        //Student o2 -> o
+        int result = this.getName().compareTo(o.getName());
+
+        if (result == 0){
+            result = o.getSurname().compareTo(this.getSurname());
+
+            if (result == 0){
+                if (this.getAge() > o.getAge()){
+                    result = 1;
+                } else if (this.getAge() < o.getAge()) {
+                    result = -1;
+                }
+            }
+        }
+        return result;
+
+
+        /*if (this.getAge() > o.getAge()) {
+            result = 1;
+        } else if (this.getAge() < o.getAge()) {
+            result = -1;
+        }
+        return result;*/
     }
 }
